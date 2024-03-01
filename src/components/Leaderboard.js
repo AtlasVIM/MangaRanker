@@ -38,12 +38,14 @@ export default function Leaderboard() {
     return( 
     <div>
     <MangaSearchAndAdd leaderboard={leaderboard} setLeaderboard={setLeaderboard}/>
-    <ul id='leaderboard-container'>
+    <div id='leaderboard-container'>
         {leaderboard.length!==0 && leaderboard.map((entry, index) =>  {
             return(
-                <li key={index} className="leaderboard-entry" draggable 
-                onDragStart={() => dragItem.current=index}
-                onDragEnter={() => dragOverItem.current=index}
+                <div key={index} className="leaderboard-entry" draggable="true" 
+                onDragStart={(e) => {
+                    dragItem.current=index}}
+                onDragEnter={(e) => {
+                    dragOverItem.current=index}}
                 onDragEnd={handleSort}
                 onDragOver={(e) => e.preventDefault}
                 >
@@ -51,8 +53,8 @@ export default function Leaderboard() {
                 <p className="manga-title"><strong>{entry.title}</strong></p>
                 <img alt={entry.title + 'cover'} src={entry.img}/>
                 <DeleteManga leaderboard={leaderboard} setLeaderboard={setLeaderboard}/>
-            </li>
+            </div>
         )})}
-    </ul>
+    </div>
     </div>
 )}
