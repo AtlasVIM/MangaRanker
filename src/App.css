@@ -6,8 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rebeccapurple;
   height: 100em;
+  background-image: url(../public/bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #search-poster {
@@ -22,10 +24,12 @@
 }
 
 #leaderboard-container {
-  background-color: darkgrey;
 }
 
 .leaderboard-entry {
+  margin:1em;
+  padding: 1em;
+  background-color: #2828289f;
   align-self: center;
   display: flex;
   flex-direction: row;
@@ -34,10 +38,23 @@
   justify-content: space-around;
   width: 32em;
   height: 11em;
+  cursor: move;
+}
+
+.leaderboard-entry:hover {
+  background-color: #0e0d0dcc;
 }
 
 .leaderboard-entry p {
   font-size: 2em;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 25em;
+}
+
+.leaderboard-entry p::-webkit-scrollbar {
+  display: none;
 }
 
 .leaderboard-entry img {
@@ -50,4 +67,95 @@
   border: 0;
   background-color: transparent;
   cursor: pointer;
+}
+
+
+#add-button {
+  background-color: rebeccapurple;
+  padding: 5px 15px;
+  outline: 0;
+  border: 0;
+  text-transform: uppercase;
+  margin: 10 0;
+  cursor: pointer;
+  box-shadow: 0 2 2 lightgray;
+  border-radius: 3px;
+  color: white;
+
+}
+
+#add-button:hover {
+  background-color: rgb(77, 39, 116);
+
+}
+
+#manga-search-input {
+  padding: 5px;
+  margin: 2px;
+  border-radius: 3px;
+  border: 0;
+  outline: 0;
+}
+
+
+select {
+
+  /* styling */
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+#manga-select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+#manga-select:focus {
+  background-image:
+    linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
 }

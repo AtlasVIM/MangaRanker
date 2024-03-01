@@ -1,28 +1,23 @@
-import { useEffect, useState } from "react";
-import GetManga from "../requests/GetManga";
-import { list } from "../persistence/list";
+import { useState } from "react";
+import GetManga from "../requests/GetManga&Select";
 import AddManga from "../persistence/AddManga";
 
-export default function MangaSearchAndAdd() {
+const defaultManga = {
+    id:'',
+    title:'',
+    img:''
+}
 
-    const [leaderboard, setLeaderboard] = useState(list)
+export default function MangaSearchAndAdd({leaderboard, setLeaderboard}) {
+
     const [search, setSearch] = useState('')
-    const [mangaToAdd, setMangaToAdd] = useState({
-        id:'',
-        rank:'',
-        title: '',
-        img: ''
-    })
-
-    useEffect(() => {
-        console.log(leaderboard)
-
-    }, [leaderboard])
+    const [mangaToAdd, setMangaToAdd] = useState(defaultManga)
 
     return <div>
-        <input id='manga-search-input' placeholder='Search for a Manga:' onChange={(e) => setSearch(e.target.value)}></input>
+        <input id='manga-search-input' placeholder='Search for a Manga:'></input>
+        <button onClick={() => setSearch(document.getElementById('manga-search-input').value)}>SEARCH</button>
         <GetManga args={search} setMangaToAdd={setMangaToAdd}></GetManga>
-        <AddManga mangaToAdd={mangaToAdd}/>
+        <AddManga setLeaderboard={setLeaderboard} leaderboard={leaderboard} mangaToAdd={mangaToAdd} defaultManga={defaultManga}/>
     </div>
     
 }

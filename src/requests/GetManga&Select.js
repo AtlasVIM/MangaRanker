@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { list } from '../persistence/list'
 
 export default function GetManga({args , setMangaToAdd}) {
-    const baseUrl= `https://kitsu.io/api/edge/manga?filter[text]=`
+    const baseUrl= `https://kitsu.io/api/edge/manga?page[limit]=20&filter[text]=`
     const [mangadex, setMangaDex] = useState([])
 
      useEffect(() => {
@@ -25,16 +24,14 @@ export default function GetManga({args , setMangaToAdd}) {
         console.log(manga)
         setMangaToAdd({
             id: manga.id,
-            rank: (list.length+1),
             title: manga.attributes.canonicalTitle,
             img: manga.attributes.posterImage.original
         })
     }
     
-    //{console.log(mangadex)}
     return <div>
         {args!=='' && 
-        <select onChange={handleSelect}>
+        <select id='manga-select' onChange={handleSelect}>
         {mangadex.map((manga) => {
             return(<option value={manga.id} className='search-results'>{manga.attributes.canonicalTitle}</option>)
         })}

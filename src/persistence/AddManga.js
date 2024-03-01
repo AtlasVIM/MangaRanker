@@ -1,22 +1,26 @@
-import { list } from "./list"
 
-export default function AddManga({mangaToAdd}) {
+export default function AddManga({mangaToAdd, leaderboard, setLeaderboard, defaultManga}) {
 
     const handleAddManga = () => {
-        
 
-        console.log(mangaToAdd)
+        if (mangaToAdd === defaultManga) {
+            console.log('Additon Failed: Empty Object')
+            return;
+        }
+        
+        const _leaderboard = [...leaderboard]
+
         const newManga = mangaToAdd
         document.getElementById('manga-search-input').value = ''
 
-        list.push(newManga)
-        console.log(list)
-       // setList([...list, newManga])
+        _leaderboard.push(newManga)
+
+        setLeaderboard(_leaderboard)
     }
 
     return(
         <div>
-            <button onClick={handleAddManga}>ADD</button>
+            <button id='add-button' onClick={handleAddManga}><strong>ADD</strong></button>
         </div>
     )
 }
