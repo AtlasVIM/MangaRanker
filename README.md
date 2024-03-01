@@ -13,6 +13,6 @@ You can add and delete entries to your list and they persist within your browser
 You can download and upload a JSON file with your entries, this serves as a backup in case you browser's local storage is emptied.
 
 ## Issues & Improvements to be made
-It could be a bit more performant, but it runs well enough.
-Still need to better the styling a little bit.
+It could be a bit more performant, but it runs well enough. \n
+Still need to better the styling a little bit. 
 File uploading has very basic validation.
