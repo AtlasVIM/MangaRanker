@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/manga-ranker/static/css/main.b9095349.css",
+    "main.js": "/manga-ranker/static/js/main.85f14daf.js",
+    "static/js/453.aaf46832.chunk.js": "/manga-ranker/static/js/453.aaf46832.chunk.js",
+    "static/media/bg.png": "/manga-ranker/static/media/bg.0915434ad78cb97c3ada.png",
+    "index.html": "/manga-ranker/index.html",
+    "main.b9095349.css.map": "/manga-ranker/static/css/main.b9095349.css.map",
+    "main.85f14daf.js.map": "/manga-ranker/static/js/main.85f14daf.js.map",
+    "453.aaf46832.chunk.js.map": "/manga-ranker/static/js/453.aaf46832.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9095349.css",
+    "static/js/main.85f14daf.js"
+  ]
+}
