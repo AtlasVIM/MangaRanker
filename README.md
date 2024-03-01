@@ -15,4 +15,4 @@ You can download and upload a JSON file with your entries, this serves as a back
 ## Issues & Improvements to be made
 It could be a bit more performant, but it runs well enough.
 Still need to better the styling a little bit.
-File uploading needs some validation in case someone uploads the wrong file.
+File uploading has very basic validation.
