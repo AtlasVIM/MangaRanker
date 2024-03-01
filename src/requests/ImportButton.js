@@ -6,7 +6,14 @@ export default function ImportButton({leaderboard}) {
 
     const handleFileChange = (event) =>{
         const file = event.target.files[0]
-        setSelectedFile(file)
+        const validation = file.name.split('.').find((fileType) => fileType === 'mangaranker')
+        console.log(file)
+        console.log(validation)
+        if(validation){
+            setSelectedFile(file)
+        } else {
+            alert('Incorrect File Type. Please try again')
+        }
     }
 
     const handleImport = () => {

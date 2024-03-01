@@ -6,7 +6,7 @@ export default function DownloadButton({leaderboard}) {
         console.log(jsonData)
         const link = document.createElement('a')
         link.href = jsonData
-        link.download = 'MangaRankerData.json'
+        link.download = 'rankdata.mangaranker'
         link.click()
         link.remove()
     }
