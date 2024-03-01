@@ -4,7 +4,6 @@ export default function DeleteManga({leaderboard, setLeaderboard}) {
 
     const handleDelete = (index) => {
         const _leaderboard = [...leaderboard]
-        console.log(index)
         _leaderboard.splice(index,1)
         setLeaderboard(_leaderboard)
     }

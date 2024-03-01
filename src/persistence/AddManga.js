@@ -20,7 +20,7 @@ export default function AddManga({mangaToAdd, leaderboard, setLeaderboard, defau
 
     return(
         <div>
-            <button id='add-button' onClick={handleAddManga}><strong>ADD</strong></button>
+            <button onClick={handleAddManga}><strong>ADD</strong></button>
         </div>
     )
 }

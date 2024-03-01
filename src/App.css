@@ -69,14 +69,25 @@
   cursor: pointer;
 }
 
+#import-export {
+  align-items:center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
 
-#add-button {
+#file-input {
+  background-color: #2828289f;
+  color: white;
+}
+
+ button {
   background-color: rebeccapurple;
   padding: 5px 15px;
   outline: 0;
   border: 0;
   text-transform: uppercase;
-  margin: 10 0;
+  margin: 1px 1px;
   cursor: pointer;
   box-shadow: 0 2 2 lightgray;
   border-radius: 3px;
